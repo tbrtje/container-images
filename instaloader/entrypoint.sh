@@ -1,7 +1,7 @@
 #!/bin/sh
 
-args="$(cat "$1" | xargs)"
+args="$(cat "/config/args.txt" | xargs)"
 
-targets="$(cat "$2" | xargs)"
+targets="$(cat "/config/target.txt" | xargs)"
 
 instaloader $args $targets

@@ -35,4 +35,4 @@ USER user
 
 VOLUME /data
 
-ENTRYPOINT ["/tini", "--", "/entrypoint.sh", "/config/args.txt", "/config/target.txt"]
+ENTRYPOINT ["/tini", "--", "/entrypoint.sh"]
