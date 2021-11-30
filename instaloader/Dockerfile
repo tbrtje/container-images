@@ -4,7 +4,7 @@ FROM python:3-slim
 ENV TINI_VERSION="v0.19.0"
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
-
+RUN apt-get update && apt-get install git
 RUN pip install -U \
     pip \
     setuptools \
