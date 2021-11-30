@@ -16,7 +16,7 @@ RUN useradd -m -r user && \
     chown user /data
 
 COPY requirements.txt ./
-RUN pip install -r requirements.txt
+RUN pip install git+https://github.com/instaloader/instaloader.git
 
 ARG GIT_HASH
 ENV GIT_HASH=${GIT_HASH:-dev}
