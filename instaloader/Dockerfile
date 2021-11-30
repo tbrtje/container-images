@@ -15,9 +15,11 @@ RUN pip install -U \
     wheel
 
 WORKDIR /data
+RUN mkdir /config
 
 RUN useradd -m -r user && \
-    chown user /data
+    chown user /data && \
+    chown /config
 
 RUN pip install git+https://github.com/instaloader/instaloader.git
 
@@ -33,4 +35,4 @@ USER user
 
 VOLUME /data
 
-ENTRYPOINT ["/tini", "--", "/entrypoint.sh"]
+ENTRYPOINT ["/tini", "--", "/entrypoint.sh", "/config/args.txt", "/config/target.txt"]
