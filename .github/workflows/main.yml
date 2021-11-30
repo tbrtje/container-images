@@ -37,4 +37,4 @@ jobs:
           username: tbrtje
           password: ${{ secrets.GITHUB_TOKEN }}
           # Location of Dockerfile, if not Dockerfile in root directory
-          dockerfile path: ./instaloader/Dockerfile
+          dockerfile path: ./instaloader/
