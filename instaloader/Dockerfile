@@ -19,7 +19,7 @@ RUN mkdir /config
 
 RUN useradd -m -r user && \
     chown user /data && \
-    chown /config
+    chown user /config
 
 RUN pip install git+https://github.com/instaloader/instaloader.git
 
