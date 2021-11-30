@@ -17,9 +17,16 @@ RUN useradd -m -r user && \
 
 RUN pip install git+https://github.com/instaloader/instaloader.git
 
+COPY ./entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh && \
+    chown user /entrypoint.sh
+
 ARG GIT_HASH
 ENV GIT_HASH=${GIT_HASH:-dev}
 
 USER user
 
-ENTRYPOINT ["/tini", "--"]
+VOLUME /data
+
+ENTRYPOINT ["/tini", "--" "/entrypoint.sh"]
