@@ -35,4 +35,4 @@ jobs:
           # Target Docker registry
           registry: ghcr.io
           # Location of Dockerfile, if not Dockerfile in root directory
-          dockerfile: ./instaloader
+          dockerfile: ./instaloader/Dockerfile
