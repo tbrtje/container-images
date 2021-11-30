@@ -1,4 +1,4 @@
-FROM 3-slim
+FROM python:3-slim
 
 # Install Tini as an Init-System
 ENV TINI_VERSION="v0.19.0"
